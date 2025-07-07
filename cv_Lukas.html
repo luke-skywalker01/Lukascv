@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukas Birgfellner - Forward Deployed Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            object-fit: cover;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+        }
+        
+        .header-text {
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95em;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .main-content {
+            padding: 50px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #fafbfc;
+            border-radius: 8px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            border-left-color: #667eea;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transform: translateX(5px);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .company {
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .date {
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+        
+        li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .project-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-text {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+        }
+        
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #48bb78;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Lukas Birgfellner</h1>
+                    <p class="tagline">Voice AI Engineer & Automation Specialist</p>
+                    <div class="contact-info">
+                        <a href="mailto:lukas@birgfellner.com">✉ lukas@birgfellner.com</a>
+                        <a href="tel:+4367634203076">📱 +43 676 34 20 376</a>
+                        <a href="https://www.linkedin.com/in/lbirgf" target="_blank">🔗 LinkedIn</a>
+                        <a href="https://github.com/lbirgf" target="_blank">💻 GitHub</a>
+                    </div>
+                </div>
+                <img src="https://github.com/luke-skywalker01/Lukascv/raw/main/image.png" alt="Profile Image" class="profile-img" />
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>Executive Summary</h2>
+                <div class="highlight-box">
+                    <p><strong>Innovative Forward Deployed Engineer</strong> with proven expertise in Voice AI implementation, specializing in Vapi integration and enterprise automation solutions. Successfully deployed production-ready voice assistants for German enterprise clients, combining deep technical knowledge with strong business acumen. Experienced in bridging the gap between cutting-edge AI technology and real-world business applications.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Voice AI & Automation</h3>
+                        <ul>
+                            <li><strong>Vapi Platform Expertise</strong>: Production deployment with n8n workflows</li>
+                            <li><strong>Twilio Integration</strong>: Enterprise telephony infrastructure</li>
+                            <li><strong>Prompt Engineering</strong>: Context-aware conversational AI</li>
+                            <li><strong>Workflow Automation</strong>: Complex business logic pipelines</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technical Stack</h3>
+                        <div class="tech-stack">
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Vapi</span>
+                            <span class="tech-badge">Twilio</span>
+                            <span class="tech-badge">n8n</span>
+                            <span class="tech-badge">GPT-4</span>
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">Cursor</span>
+                            <span class="tech-badge">Replit</span>
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">AI Automation Consultant & Software Dev Manager</span>
+                            <span class="company"> | myclimate & Self-Employed</span>
+                        </div>
+                        <span class="date">January 2021 - Present</span>
+                    </div>
+                    <p style="color: #718096; margin-bottom: 15px;">Vienna, Berlin, Zurich | <em>Currently building a full-time AI automation company - until I discovered Vapi and knew I had to be part of this team!</em></p>
+                    
+                    <h4 style="margin-bottom: 10px; color: #667eea;">Voice AI & Automation Achievements:</h4>
+                    <ul>
+                        <li>Architected and deployed <strong>Vapi-powered voice assistant</strong> for German enterprise client, achieving production readiness within 4 weeks</li>
+                        <li>Currently transitioning to <strong>Vapi's internal workflow section</strong> to reduce latency and operational costs by 40%</li>
+                        <li>Developed <strong>PowerAI Workflow</strong> for automated, hyper-personalized lead generation, increasing qualified leads by 300%</li>
+                        <li>Pilot customer for Vapi appointment assistant: <strong>4,000+ minutes of inbound calls</strong> to be handled by AI, relieving secretary team</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; margin-bottom: 10px; color: #667eea;">Last 6 Months Focus:</h4>
+                    <ul>
+                        <li>Automated and innovated myclimate's entire outbound sales process through n8n power workflows</li>
+                        <li>Implemented n8n automation power workflows at multiple enterprise clients as independent consultant</li>
+                        <li>Created webhook-based integrations between Vapi, CRM systems, and business intelligence tools</li>
+                        <li>Automated LinkedIn content generation and posting, achieving 2x engagement growth</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Technical Project Manager</span>
+                            <span class="company"> | Self-Employed</span>
+                        </div>
+                        <span class="date">March 2014 - July 2020</span>
+                    </div>
+                    <p style="color: #718096; margin-bottom: 15px;">Vienna, Austria</p>
+                    <ul>
+                        <li>Built and deployed automation systems for property management operations</li>
+                        <li>Developed custom APIs for billing, customer management, and reporting</li>
+                        <li>Managed technical infrastructure for 10+ properties with zero downtime</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Forecast Analyst</span>
+                            <span class="company"> | Siemens Financial Services</span>
+                        </div>
+                        <span class="date">July 2013 - October 2013</span>
+                    </div>
+                    <p style="color: #718096; margin-bottom: 15px;">New York, United States</p>
+                    <ul>
+                        <li>Analyzed financial data and created forecast processes for global regions (APAC, EMEA, AMER)</li>
+                        <li>Developed growth rate projections and ROI calculations for strategic planning</li>
+                        <li>Managed budgeting processes and financial reporting for executive leadership</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Technical Projects</h2>
+                
+                <div class="project-card">
+                    <h3 class="project-title">🎯 Vapi Voice Assistant Implementation</h3>
+                    <ul>
+                        <li><strong>Challenge</strong>: German enterprise needed scalable voice AI for customer service</li>
+                        <li><strong>Solution</strong>: Deployed Vapi with custom n8n workflows and Twilio integration</li>
+                        <li><strong>Result</strong>: 90% call resolution rate, 45% reduction in support costs</li>
+                        <li><strong>Tech Stack</strong>: Vapi, n8n, Twilio, Node.js, PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">🚀 PowerAI Lead Generation System</h3>
+                    <ul>
+                        <li><strong>Challenge</strong>: Manual lead qualification consuming 20+ hours weekly</li>
+                        <li><strong>Solution</strong>: AI-powered workflow for automated lead scoring and personalization</li>
+                        <li><strong>Result</strong>: 300% increase in qualified leads, 15 hours saved weekly</li>
+                        <li><strong>Tech Stack</strong>: GPT-4, n8n, Python, REST APIs</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">📱 LinkedIn Automation Suite</h3>
+                    <ul>
+                        <li><strong>Challenge</strong>: Inconsistent social media presence affecting brand visibility</li>
+                        <li><strong>Solution</strong>: AI-driven content generation with automated posting</li>
+                        <li><strong>Result</strong>: 2x engagement, consistent automated posting</li>
+                        <li><strong>Tech Stack</strong>: Lorra, FalAI, RSS, OpenAI, Relevance</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Master's Degree</span>
+                            <span class="company"> | Environmental Engineering</span>
+                        </div>
+                        <span class="date">September 2017 - October 2020</span>
+                    </div>
+                    <p style="color: #718096; margin-bottom: 15px;">University of Natural Resources and Life Sciences, Vienna</p>
+                    <ul>
+                        <li>Master Thesis: "Measuring trade-offs in valuing the benefits of autonomous technology to society"</li>
+                        <li>Presented at DAVeMoS conference in Brussels</li>
+                        <li>Focus: Data Science, Project Management, Innovation Systems</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Bachelor's Degree</span>
+                            <span class="company"> | Business, Economics and Social Sciences</span>
+                        </div>
+                        <span class="date">September 2012 - June 2017</span>
+                    </div>
+                    <p style="color: #718096; margin-bottom: 15px;">Vienna University of Economics and Business</p>
+                    <ul>
+                        <li>Specialization: Business Innovation, Energy Engineering, Strategic Planning</li>
+                        <li>Key Projects: Intelligent Traffic Systems, SME Digital Transformation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Why Vapi?</h2>
+                <div class="highlight-box">
+                    <p>As an early adopter and successful implementer of Vapi in production environments, I bring:</p>
+                    <ul style="margin-top: 15px;">
+                        <li><span class="pulse-dot"></span><strong>Proven Track Record</strong>: Already secured and deployed Vapi for enterprise clients</li>
+                        <li><span class="pulse-dot"></span><strong>Technical Depth</strong>: Hands-on experience with Vapi's full technical stack</li>
+                        <li><span class="pulse-dot"></span><strong>Business Acumen</strong>: Ability to identify high-value use cases and drive adoption</li>
+                        <li><span class="pulse-dot"></span><strong>Startup Mentality</strong>: Self-starter who thrives in uncertain, fast-paced environments</li>
+                        <li><span class="pulse-dot"></span><strong>Builder Mindset</strong>: From idea to production - I build, test, and ship</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
