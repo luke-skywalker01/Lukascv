@@ -3,548 +3,602 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukas Birgfellner - Forward Deployed Engineer</title>
+    <meta name="description" content="Lukas Birgfellner - Unternehmer & KI-Spezialist - Lebenslauf">
+    <meta name="author" content="Lukas Birgfellner">
+    <title>Lukas Birgfellner - CV</title>
     <style>
-        /* General styling for the document */
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        html {
+            font-size: 100%;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.65;
-            color: #2d3748; /* Dunkleres, weicheres Schwarz */
-            background: #f7fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #2d3748;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
+        /* Page Layout */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.07);
-            overflow: hidden; /* Für abgerundete Ecken */
+            position: relative;
+            page-break-after: always;
         }
         
-        /* Header section with refined gradient and animation */
+        .page:last-child {
+            page-break-after: auto;
+        }
+        
+        @media screen {
+            body {
+                background: #e5e5e5;
+            }
+            
+            .page {
+                margin: 20px auto;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .page {
+                padding: 15mm;
+                margin: 0;
+                width: 210mm;
+                min-height: 297mm;
+                page-break-after: always;
+                box-shadow: none;
+            }
+            
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+        /* Header Styles */
         header {
-            background: linear-gradient(135deg, #5a67d8 0%, #7f5ad5 100%);
-            color: white;
-            padding: 60px 50px;
-            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3182ce;
         }
         
         .header-content {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            position: relative;
-            z-index: 1;
+            align-items: flex-start;
+            gap: 20px;
         }
         
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.95);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            object-fit: cover;
-        }
-        
-        .header-text {
+        .header-left {
             flex: 1;
-            margin-right: 40px;
         }
         
-        h1 {
-            font-size: 2.7em;
-            margin-bottom: 8px;
+        .header-left h1 {
+            font-size: 32pt;
             font-weight: 700;
-            letter-spacing: -1px;
-        }
-        
-        .tagline {
-            font-size: 1.4em;
-            font-weight: 300;
-            opacity: 0.9;
-            margin-bottom: 25px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px 25px;
-            font-size: 0.95em;
-        }
-        
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-info a:hover {
-            transform: translateY(-2px);
-        }
-
-        .contact-info svg {
-            width: 20px;
-            height: 20px;
-            opacity: 0.8;
-        }
-        
-        /* Main content styling */
-        .main-content {
-            padding: 50px;
-        }
-        
-        .section {
-            margin-bottom: 50px;
-        }
-        
-        h2 {
-            color: #4c51bf;
-            font-size: 1.9em;
-            margin-bottom: 25px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #e2e8f0;
+            color: #1a202c;
+            margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
         
-        .highlight-box {
-            background: #f7fafc;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            border: 1px solid #e2e8f0;
-            border-left: 5px solid #5a67d8;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        
-        .tech-badge {
-            background: #edf2f7;
-            color: #4a5568;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9em;
+        .header-left .subtitle {
+            font-size: 14pt;
+            color: #3182ce;
             font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .tech-badge:hover {
-            background: #5a67d8;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(90, 103, 216, 0.3);
-        }
-        
-        .experience-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .experience-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }
-        
-        .job-title {
-            font-size: 1.35em;
-            font-weight: 600;
-            color: #2d3748;
-        }
-        
-        .company {
-            color: #5a67d8;
-            font-weight: 500;
-        }
-        
-        .date {
-            color: #718096;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-        
-        ul {
-            list-style: none;
-            padding-left: 5px; /* Kleiner Einzug für die Liste */
-        }
-        
-        li {
-            position: relative;
-            padding-left: 25px;
             margin-bottom: 12px;
+        }
+        
+        .contact-info {
+            font-size: 11pt;
             color: #4a5568;
+            margin-top: 10px;
         }
         
-        li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            top: 0;
-            line-height: 1.65; 
-            color: #5a67d8;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-
-        .highlight-box ul li::before, .key-achievements ul li::before {
-            content: '';
-        }
-
-        .highlight-box ul li, .key-achievements ul li {
-            padding-left: 0; 
+        .contact-info div {
+            margin-bottom: 5px;
         }
         
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+        .contact-info a {
+            color: #3182ce;
+            text-decoration: none;
+            transition: color 0.2s;
         }
         
-        .skill-category {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        .contact-info a:hover {
+            color: #2563eb;
+            text-decoration: underline;
         }
         
-        .skill-category h3 {
-            color: #5a67d8;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        
-        .project-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-            position: relative;
+        .photo-container {
+            width: 120px;
+            height: 150px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
             overflow: hidden;
         }
         
-        .project-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transform: translateY(-5px);
-            border-color: #5a67d8;
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .project-title {
+        .photo-placeholder {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 10pt;
+            padding: 10px;
+        }
+        
+        /* Section Styles */
+        section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 14pt;
             font-weight: 600;
-            font-size: 1.2em;
-            color: #2d3748;
+            color: #1a202c;
+            margin-bottom: 15px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Experience Styles */
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        
+        .position-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #1a202c;
+        }
+        
+        .company-name {
+            font-size: 11pt;
+            color: #3182ce;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+        
+        .date-range {
+            font-size: 10pt;
+            color: #718096;
+            font-style: italic;
+            white-space: nowrap;
+        }
+        
+        .achievements {
+            margin-left: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        
+        .achievements li {
+            font-size: 11pt;
+            color: #4a5568;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        
+        /* Two Column Layout */
+        .two-column-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .column-left {
+            flex: 1.3;
+        }
+        
+        .column-right {
+            flex: 1;
+        }
+        
+        /* Skills Styles */
+        .skill-group {
             margin-bottom: 15px;
         }
         
-        @media (max-width: 768px) {
-            .container {
-                margin: 0;
-                border-radius: 0;
-            }
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .header-text {
-                margin-right: 0;
-                margin-bottom: 30px;
-            }
-            
-            .contact-info {
-                justify-content: center;
-            }
-            
-            .main-content {
-                padding: 40px 25px;
-            }
-            
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-        
-        .pulse-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: #38a169;
-            border-radius: 50%;
-            margin-right: 12px; 
-            vertical-align: middle;
-            animation: pulse-dot 1.75s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.3); }
-        }
-
-        .key-achievements {
-            background-color: #f7fafc;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            border: 1px solid #e2e8f0;
-        }
-        .key-achievements h4 {
+        .skill-group h3 {
+            font-size: 11pt;
             font-weight: 600;
             color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .skill-tag {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 10pt;
+            border: 1px solid #cbd5e0;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .skill-tag.highlight {
+            background: #bee3f8;
+            color: #2c5282;
+            border-color: #90cdf4;
+            font-weight: 500;
+        }
+        
+        @media screen {
+            .skill-tag:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+        
+        /* Education Styles */
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .degree {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .university {
+            font-size: 10pt;
+            color: #4a5568;
+            margin-bottom: 2px;
+        }
+        
+        .edu-date {
+            font-size: 10pt;
+            color: #718096;
+            font-style: italic;
+        }
+        
+        /* Project Styles */
+        .project-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8fafc;
+            border-left: 4px solid #3182ce;
+            border-radius: 4px;
+        }
+        
+        .project-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #2c5282;
+            margin-bottom: 8px;
+        }
+        
+        .project-description {
+            font-size: 11pt;
+            color: #4a5568;
             margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .project-details {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .project-details li {
+            font-size: 10pt;
+            color: #4a5568;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .project-details li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3182ce;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #f0f9ff 100%);
+            border: 2px solid #3182ce;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+        
+        .highlight-box h3 {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #2c5282;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            font-size: 11pt;
+            color: #2d3748;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .metric {
+            font-size: 10pt;
+            color: #2c5282;
+            font-weight: 500;
+        }
+        
+        /* Responsive for smaller screens */
+        @media screen and (max-width: 768px) {
+            .page {
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .two-column-container {
+                flex-direction: column;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- SEITE 1 -->
+    <div class="page">
+        <!-- Header with Photo -->
         <header>
             <div class="header-content">
-                <div class="header-text">
+                <div class="header-left">
                     <h1>Lukas Birgfellner</h1>
-                    <p class="tagline">Forward Deployed Engineer</p>
+                    <div class="subtitle">Unternehmer & KI-Spezialist</div>
                     <div class="contact-info">
-                        <a href="mailto:lukas@birgfellner.com">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span>lukas@birgfellner.com</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/lbirgf" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://luke-skywalker01.github.io/Lukascv/" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            <span>CV-Link</span>
-                        </a>
+                        <div>📧 lukas@birgfellner.com</div>
+                        <div>🔗 <a href="https://linkedin.com/in/lbirgf" target="_blank">linkedin.com/in/lbirgf</a></div>
+                        <div>📍 Wien, Österreich</div>
                     </div>
                 </div>
-                <img src="https://github.com/luke-skywalker01/Lukascv/raw/main/image.png" alt="Profilbild" class="profile-img" />
+                <div class="photo-container">
+                    <div class="photo-placeholder">
+                        [Foto]<br>
+                        <small>Bitte Bild<br>hier einfügen</small>
+                    </div>
+                    <!-- Uncomment and add your photo URL when hosting on GitHub -->
+                    <!-- <img src="your-photo-url.jpg" alt="Lukas Birgfellner"> -->
+                </div>
             </div>
         </header>
 
-        <main class="main-content">
-            <section class="section">
-                <h2>Executive Summary</h2>
-                <div class="highlight-box">
-                    <p><strong>Forward Deployed Engineer</strong> with proven success in deploying Vapi's Voice AI in enterprise environments. Expert at bridging the gap between complex technical solutions and tangible business value. I don't just implement technology; I deliver production-ready systems that generate revenue and cut costs, as demonstrated with my existing Vapi client projects.</p>
+        <!-- Professional Experience -->
+        <section>
+            <h2>Berufserfahrung</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="position-title">Project Manager Sustainability Services</span>
+                        <span class="company-name">myclimate Austria</span>
+                    </div>
+                    <span class="date-range">Januar 2023 – Heute</span>
                 </div>
-            </section>
+                <ul class="achievements">
+                    <li>Projektverantwortlich für Softwareentwicklung zur CSRD-Compliance</li>
+                    <li>Projektleitung für Nachhaltigkeitsstrategien internationaler Unternehmenskunden</li>
+                    <li>Einführung von KI-gestützten Prozessoptimierungen zur Effizienzsteigerung interner Abläufe</li>
+                    <li>Entwicklung und Implementierung datengetriebener Lösungen für ESG-Reporting</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="position-title">Freiberufliche Projekttätigkeit</span>
+                        <span class="company-name">Automation & AI Pilotprojekte</span>
+                    </div>
+                    <span class="date-range">Oktober 2024 – Heute</span>
+                </div>
+                <ul class="achievements">
+                    <li>Beratung von 3 Pilotkunden bei der Einführung von Voice-AI Lösungen</li>
+                    <li>Unterstützung bei der Automatisierung von Kundenkommunikationsprozessen</li>
+                    <li>Fokus auf KMU aus Handwerk und Gesundheitswesen</li>
+                </ul>
+            </div>
 
-            <section class="section">
-                <h2>Core Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="position-title">Technical Project Manager</span>
+                        <span class="company-name">Immobilienverwaltung (Selbstständig)</span>
+                    </div>
+                    <span class="date-range">März 2014 – Juli 2020</span>
+                </div>
+                <ul class="achievements">
+                    <li>Verwaltung eines Portfolios von 14 Immobilieneinheiten</li>
+                    <li>Entwicklung automatisierter Abrechnungs- und Verwaltungssysteme</li>
+                    <li>Implementierung digitaler Prozesse für effiziente Kundenbetreuung</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="position-title">Forecast Analyst (Praktikum)</span>
+                        <span class="company-name">Siemens Financial Services, New York</span>
+                    </div>
+                    <span class="date-range">Juli 2013 – Oktober 2013</span>
+                </div>
+                <ul class="achievements">
+                    <li>Finanzanalyse und ROI-Berechnungen für globale Solarprojekte</li>
+                    <li>Entwicklung von Wachstumsprognosen für erneuerbare Energieprojekte</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- SEITE 2 -->
+    <div class="page">
+        <!-- Two Column Section -->
+        <div class="two-column-container">
+            <div class="column-left">
+                <section>
+                    <h2>Kompetenzen</h2>
+                    <div class="skill-group">
                         <h3>Voice AI & Automation</h3>
-                        <ul>
-                            <li><strong>Vapi Platform Mastery</strong>: Production deployment & optimization</li>
-                            <li><strong>Enterprise Telephony</strong>: Twilio integration & management</li>
-                            <li><strong>Conversational AI Design</strong>: Advanced prompt engineering</li>
-                            <li><strong>Complex Workflow Automation</strong>: n8n, RAG, HTTP Requests & custom scripts</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Technical Stack</h3>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Vapi</span>
-                            <span class="tech-badge">GPT-4</span>
-                            <span class="tech-badge">Twilio</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">TypeScript</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">n8n</span>
-                            <span class="tech-badge">Supabase</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">Vector DBs</span>
-                            <span class="tech-badge">REST APIs</span>
-                            <span class="tech-badge">Git & GitHub</span>
-                            <span class="tech-badge">RAG</span>
-                            <span class="tech-badge">Cursor</span>
-                            <span class="tech-badge">Replit</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Vapi Platform</span>
+                            <span class="skill-tag highlight">Conversational AI</span>
+                            <span class="skill-tag">Twilio</span>
+                            <span class="skill-tag">n8n Workflows</span>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <span class="job-title">AI Automation Consultant & Entrepreneur</span>
-                            <span class="company"> | Self-Employed (Pre-Founding Stage)</span>
+                    
+                    <div class="skill-group">
+                        <h3>Programmierung & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Supabase</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Git</span>
                         </div>
-                        <span class="date">January 2021 - Present</span>
                     </div>
-                     <ul>
-                        <li>Architected and deployed a <strong>Vapi-powered voice assistant</strong> for a German enterprise client, achieving production readiness in under four weeks.</li>
-                        <li>Developed and currently pitching a <strong>Vapi outbound cold-calling agent</strong> to a major recruitment agency, demonstrating clear product-market fit.</li>
-                        <li>Engineered a PowerAI workflow that automated lead generation, resulting in a <strong>300% increase in qualified leads</strong>.</li>
-                        <li>Acted as a pilot customer for Vapi's appointment assistant, successfully automating over <strong>4,000 minutes of inbound calls</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <span class="job-title">Forward Deployed Engineer & AI Lead</span>
-                            <span class="company"> | myclimate</span>
+                    
+                    <div class="skill-group">
+                        <h3>Business & Management</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Projektmanagement</span>
+                            <span class="skill-tag">Geschäftsentwicklung</span>
+                            <span class="skill-tag">Kundenakquise</span>
+                            <span class="skill-tag">Datenanalyse</span>
                         </div>
-                        <span class="date">Parallel to Self-Employment</span>
                     </div>
-                     <ul>
-                        <li>Acted as a Forward Deployed Engineer to align internal software with EU sustainability reporting standards (CSRD).</li>
-                        <li>Led the transformation of internal operations through the implementation of AI and automation.</li>
-                        <li>Successfully automated key sales and marketing processes, improving efficiency and data accuracy.</li>
-                     </ul>
-                </div>
+                </section>
+            </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <span class="job-title">Technical Project Manager</span>
-                            <span class="company"> | Self-Employed</span>
-                        </div>
-                        <span class="date">March 2014 - July 2020</span>
+            <div class="column-right">
+                <section>
+                    <h2>Ausbildung</h2>
+                    <div class="education-item">
+                        <div class="degree">Master of Science</div>
+                        <div class="university">Universität für Bodenkultur Wien</div>
+                        <div class="university">Umweltsystemwissenschaften</div>
+                        <div class="edu-date">2017 – 2020</div>
                     </div>
-                     <ul>
-                        <li>Built and deployed automation systems for property management operations.</li>
-                        <li>Developed custom APIs for billing, customer management, and reporting.</li>
-                        <li>Managed technical infrastructure for 10+ properties with 100% uptime.</li>
-                    </ul>
-                </div>
-
-                 <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <span class="job-title">Forecast Analyst</span>
-                            <span class="company"> | Siemens Financial Services</span>
-                        </div>
-                        <span class="date">July 2013 - October 2013</span>
+                    
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Science</div>
+                        <div class="university">Wirtschaftsuniversität Wien</div>
+                        <div class="university">Wirtschaftswissenschaften</div>
+                        <div class="edu-date">2012 – 2017</div>
                     </div>
-                    <p style="color: #718096; margin-bottom: 15px;">New York, United States</p>
-                    <ul>
-                        <li>Analyzed financial data and created forecast processes for global regions.</li>
-                        <li>Developed growth rate projections and ROI calculations for strategic planning.</li>
-                    </ul>
-                </div>
-            </section>
 
-            <section class="section">
-                <h2>Technical Projects</h2>
-                
-                <div class="project-card">
-                    <h3 class="project-title">🚀 AI Lead Generation System</h3>
-                    <ul>
-                        <li><strong>Challenge</strong>: Manual lead qualification was consuming over 20 hours of valuable sales time weekly.</li>
-                        <li><strong>Solution</strong>: Built an AI-powered workflow for automated lead scoring, research, and hyper-personalization of outreach messages.</li>
-                        <li><strong>Result</strong>: Increased the number of qualified leads by 300% while saving 15 hours of manual work per week.</li>
-                    </ul>
-                </div>
-
-                 <div class="project-card">
-                    <h3 class="project-title">📈 Marketing Automation Suite</h3>
-                    <ul>
-                        <li><strong>Challenge</strong>: An inconsistent social media presence was affecting brand visibility and engagement.</li>
-                        <li><strong>Solution</strong>: Deployed an AI-driven content generation and scheduling system using tools like Lorra, FalAI, and OpenAI.</li>
-                        <li><strong>Result</strong>: Doubled audience engagement and established a consistent, automated posting schedule.</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">📞 AI Receptionist for Healthcare Practice</h3>
-                    <ul>
-                        <li><strong>Challenge</strong>: The reception staff at a busy physiotherapy practice in Landau, Germany, was overwhelmed with phone calls, reducing their time for in-person patient care.</li>
-                        <li><strong>Solution</strong>: Deployed a Vapi-based voice AI to handle appointment scheduling, cancellations, and common inquiries, integrated with their existing practice management software.</li>
-                        <li><strong>Result</strong>: Freed up the reception team to focus on patients, leading to a noticeable improvement in patient satisfaction and reducing administrative workload by an estimated 15 hours per week.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Education</h2>
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <span class="job-title">Master's Degree, Environmental Engineering</span>
-                            <span class="company"> | University of Natural Resources and Life Sciences, Vienna</span>
-                        </div>
-                        <span class="date">2017 - 2020</span>
+                    <h2 style="margin-top: 20px;">Sprachen</h2>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Deutsch (Muttersprache)</span>
+                        <span class="skill-tag">Englisch (Verhandlungssicher)</span>
                     </div>
-                    <ul>
-                        <li>Master Thesis: "Measuring trade-offs in valuing the benefits of autonomous technology to society"</li>
-                        <li>Focus: Data Science, Project Management, Innovation Systems</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <span class="job-title">Bachelor's Degree, Business, Economics and Social Sciences</span>
-                             <span class="company"> | Vienna University of Economics and Business</span>
-                        </div>
-                         <span class="date">2012 - 2017</span>
-                    </div>
-                    <ul>
-                        <li>Specialization: Business Innovation, Energy Engineering, Strategic Planning</li>
-                    </ul>
-                </div>
-            </section>
+                </section>
+            </div>
+        </div>
 
-            <section class="section">
-                <h2>Why Vapi? My Strategic Focus on a Shared Vision</h2>
-                <div class="highlight-box">
-                    <p style="font-size: 1.1em; margin-bottom: 20px;">
-                        After successfully acquiring pilot customers for my own Vapi-based products, I've reached a strategic decision. Instead of focusing on a single venture, I want to channel my know-how and entrepreneurial energy into a platform I deeply believe in. My goal is to contribute to Vapi's core growth, driven by a shared vision and the excitement of collaborative innovation.
-                    </p>
-                    <ul>
-                        <li>
-                            <span class="pulse-dot"></span>
-                            <strong>Shared Growth Vision:</strong> I see immense potential for Vapi's expansion in the European market. I want to be instrumental in this growth, leveraging my experience to build a strong presence and drive adoption.
-                        </li>
-                        <li>
-                            <span class="pulse-dot"></span>
-                            <strong>Collaborative Innovation:</strong> I am eager to join a team of like-minded experts. I believe that the exchange of ideas and collaborative problem-solving within Vapi will lead to far greater results than I could achieve alone.
-                        </li>
-                        <li>
-                            <span class="pulse-dot"></span>
-                            <strong>Proven Product-Market Fit:</strong> I don't just think Vapi has potential; I have validated it in the market by signing clients. I bring hands-on experience in what it takes to sell and deploy Vapi-powered solutions successfully.
-                        </li>
-                         <li>
-                            <span class="pulse-dot"></span>
-                            <strong>Immediate Impact:</strong> My experience means I can contribute from day one—not just technically, but also by providing valuable market feedback and supporting customer success with proven strategies.
-                        </li>
-                    </ul>
+        <!-- Projects Section -->
+        <section>
+            <h2>Relevante Projekte & Erfolge</h2>
+            
+            <div class="project-item">
+                <div class="project-title">🎯 AI Lead Generation System</div>
+                <div class="project-description">
+                    Entwicklung eines KI-gestützten Workflows zur automatisierten Lead-Qualifizierung und personalisierten Kundenansprache.
                 </div>
-            </section>
-        </main>
+                <ul class="project-details">
+                    <li>300% Steigerung qualifizierter Leads bei 75% Zeitersparnis</li>
+                    <li>Integration von OpenAI GPT-4 für hyperpersonalisierte Nachrichten</li>
+                    <li>Vollautomatisierte Pipeline von der Recherche bis zum Erstkontakt</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Innovation Project Highlight -->
+        <div class="highlight-box">
+            <h3>🚀 Aktuelles Innovationsprojekt: Voice-AI Plattform für KMU</h3>
+            <p>
+                Entwicklung einer revolutionären Low-Code-Plattform zur Demokratisierung von Voice-AI für über 600.000 KMU im DACH-Raum. 
+                Das Projekt adressiert den akuten Fachkräftemangel durch intelligente Automatisierung der Kundenkommunikation mit Fokus auf 
+                radikale Benutzerfreundlichkeit und strikte DSGVO-Konformität.
+            </p>
+            <div class="metrics-grid">
+                <span class="metric">✓ Geschäftsmodell validiert</span>
+                <span class="metric">✓ Erste Pilotkunden gewonnen</span>
+                <span class="metric">✓ Förderantrag: 280.000€</span>
+                <span class="metric">✓ Markteintritt: Q3 2026</span>
+                <span class="metric">✓ Geplantes Team: 7 VZÄ</span>
+                <span class="metric">✓ Zielmarkt: 600.000+ KMU</span>
+            </div>
+        </div>
     </div>
 </body>
 </html>
